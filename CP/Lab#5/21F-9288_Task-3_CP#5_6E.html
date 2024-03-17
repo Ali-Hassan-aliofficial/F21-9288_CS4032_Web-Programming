@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Image Display</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #image {
+            display: none; /* Initially hide the image */
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="toggleButton" value="Show Image">
+    <br>
+    <img src="106_dark_website_designs.png" id="image" alt="Uploaded Image">
+
+    <script>
+        $(document).ready(function() {
+            // Toggle image display and button text
+            $("#toggleButton").click(function() {
+                $("#image").toggle();
+                var buttonText = $("#toggleButton").val();
+                if (buttonText === "Show Image") {
+                    $("#toggleButton").val("Hide Image");
+                } else {
+                    $("#toggleButton").val("Show Image");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

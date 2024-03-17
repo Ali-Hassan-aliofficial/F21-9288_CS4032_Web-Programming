@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic Clock</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300&display=swap');
+
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            overflow-x: hidden;
+            background-color: #16164a;
+            font-family: 'Montserrat',sans-serif;
+        }
+        h1{
+            font-size: 130px;
+    font-weight: 200;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #03a9f4, #ff05d5);
+    padding: 30px 70px;
+    min-width: 800px;
+    text-align: center;
+    position: relative;
+        }
+    </style>
+    </head>
+<body>
+    <h1 id="clock"></h1>
+    <script type="text/javascript">
+        function myclock() {
+            var clock = document.getElementById("clock");
+            var currentDate = new Date();
+
+            var h = currentDate.getHours();
+            var m = currentDate.getMinutes();
+            var s = currentDate.getSeconds();
+            m = m < 10 ? `0${m}` : m;
+            s = s < 10 ? `0${s}` : s;
+            clock.innerText = `${h}:${m}:${s}`;
+            setTimeout(myclock, 1000);
+        }
+        myclock();
+    </script>
+</body>
+
+</html>
