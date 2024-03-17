@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.scoreboard {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 0;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.btn img {
+  width: 100px; /* Adjust size as needed */
+}
+
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
