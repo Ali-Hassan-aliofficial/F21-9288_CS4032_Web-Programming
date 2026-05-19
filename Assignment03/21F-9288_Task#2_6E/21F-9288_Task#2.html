@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Search</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Weather Search</h1>
+    <input type="text" id="cityName" placeholder="Enter city name">
+    <button id="searchBtn">Search</button>
+    <div id="weatherInfo"></div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#searchBtn').click(function(){
+        var cityName = $('#cityName').val();
+        const apiKey = "63463d2f4d7888f923f5472a880a3080";
+
+        var apiUrl = `https://pro.openweathermap.org/data/2.5/forecast/hourly?q={city name}&appid={API key}`;
+
+        $.ajax({
+            url: apiUrl,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data){
+                // Assuming data contains weather information
+                var weatherInfo = '';
+                // Extract and display weather information as needed
+                $('#weatherInfo').html(weatherInfo);
+            },
+            error: function(xhr, status, error){
+                alert('Error: ' + error.message);
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
